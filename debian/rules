@@ -1,0 +1,69 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+
+
+# запускаем все остальные deb-helper'ы "по умолчанию"
+# (про которые мы как раз ничего не знаем):
+%:
+	dh $@ 
+
+deb_root = debian
+pkg_root = $(deb_root)/openscad
+src_root = $(deb_root)/source
+# отказываемся от использования dh_install, который в данном примере больше будет мешать, чем помогать принцип сборки пакетов: 
+override_dh_install:
+
+# Prepare package root dir & clean is not needed.
+    # дальше мы создаём дерево каталогов внутри сборочного дерева,
+    # из которого соберется архив с файлами:
+    # для начала убедимся, что там не осталось хлама от предыдущих
+    # сборок (получим пустой каталог debian/example-package):
+      #	mkdir -p $(pkg_root)
+    # если не создавать пустой файл - то команда rm упадёт
+    # со словами "нечего удалять" и сборка пакета не случится 
+#	touch $(pkg_root)/dummy
+#	rm -f $(pkg_root)/*
+
+    # теперь создаём нужные каталоги:
+#	# mkdir -p debian/openscad/usr
+#	mkdir -p $(pkg_root)/usr
+
+#	mkdir -p $(pkg_root)/usr/bin
+#	mkdir -p $(pkg_root)/usr/lib
+
+#$(foreach dir,$(lvl1),$(pkg_root)/usr/$(dir)): $(pkg_root)/usr
+	#mkdir $@
+#	mkdir -p $(pkg_root)/usr/lib/openscad
+#	mkdir -p $(pkg_root)/usr/share
+#	mkdir -p $(pkg_root)/usr/share/appdata
+#	mkdir -p $(pkg_root)/usr/share/openscad
+#	mkdir -p $(pkg_root)/usr/share/openscad/examples
+
+# 	mkdir -p debian/openscad/usr/share/openscad/libraries
+# 	mkdir -p debian/openscad/usr/share/openscad/libraries/MCAD
+
+# копируем наши файлики:
+    # "Copying application wrappers..."
+	cp -rv $(src_root)/bin/. $(pkg_root)/usr/bin/
+    # "Copying application..."
+	cp -rv $(src_root)/lib/. $(pkg_root)/usr/lib/
+    # "Copying examples..."
+	cp -rv $(src_root)/examples/. $(pkg_root)/usr/share/openscad/examples/
+#    # "Copying libraries..."
+#	cp -rv $(src_root)/libraries/. $(pkg_root)/usr/share/openscad/libraries/
+    # "Copying support files..."
+	cp -rv $(src_root)/share/. $(pkg_root)/usr/share/
+
+
+override_dh_makeshlibs:
+# skipped
+
+override_dh_shlibdeps:
+# skipped
+

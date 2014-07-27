@@ -1,0 +1,90 @@
+# OpenSCAD 2014.03 handmade package
+# The Main control file
+
+Source: openscad
+#Provides: OpenSCAD
+Section: universe/graphics;3Dgraphics;engineering
+#Section: universe/graphics
+Priority: extra
+Maintainer: Solomatov A.A <aso@tlt.ru>
+Uploaders: Solomatov A.A <aso@tlt.ru>
+# ?
+XBS-Original-Maintainer: Christian M. Amsüss <chrysn@fsfe.org>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Origin: http://files.openscad.org/openscad-2014.03.x86-32.tar.gz
+Homepage: http://openscad.org/
+#Vcs-Git: git://git.debian.org/collab-maint/openscad.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/openscad.git;a=summary
+#Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Bugs: https://github.com/openscad/openscad/issues
+
+Package: openscad
+Architecture: i386
+XBS-Version: 2014.03-aso-0.2
+#Pre-Depends
+Depends: ${shlibs:Depends}, ${extra:Depends}, libboost-filesystem1.54.0,
+ libboost-program-options1.54.0, libboost-regex1.54.0, libboost-system1.54.0,
+ libboost-thread1.54.0, libc6 (>= 2.4), libcgal10, libgcc1 (>= 1:4.1.1),
+ libgl1-mesa-glx | libgl1, libglew1.10 (>= 1.10.0), libglu1-mesa | libglu1,
+ libgmp10, libmpfr4 (>= 3.1.2), libopencsg1, libqt4-opengl (>= 4:4.5.3),
+ libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6)
+Recommends: openscad-mcad
+Suggests: meshlab, geomview, librecad
+# Enhances: openscad
+#Conflicts
+#Replaces
+Description: The Programmers Solid 3D CAD Modeller
+ OpenSCAD is a software for creating solid 3D CAD models.
+ It is free software and available for Linux/UNIX, Windows and Mac OS X.
+ Unlike most free software for creating 3D models (such as Blender)
+ it does not focus on the artistic aspects of 3D modelling but instead
+ on the CAD aspects. Thus it might be the application you are looking for
+ when you are planning to create 3D models of machine parts but pretty sure
+ is not what you are looking for when you are more interested in creating
+ computer-animated movies.
+ .
+ OpenSCAD is not an interactive modeller. Instead it is something like
+ a 3D-compiler that reads in a script file that describes the object and
+ renders the 3D model from this script file. This gives you (the designer)
+ full control over the modelling process and enables you to easily change
+ any step in the modelling process or make designs that are defined
+ by configurable parameters.
+ .
+ OpenSCAD provides two main modelling techniques: First there is
+ constructive solid geometry (aka CSG) and second there is extrusion
+ of 2D outlines. As data exchange format format for this 2D outlines
+ Autocad DXF files are used. In addition to 2D paths for extrusion it is
+ also possible to read design parameters from DXF files. Besides DXF files
+ OpenSCAD can read and create 3D models in the STL and OFF file formats.
+
+Package: openscad-mcad
+Architecture: all
+Description: Additional library for openscad
+ OpenSCAD is a software for creating solid 3D CAD models.
+ It is free software and available for Linux/UNIX, Windows and Mac OS X.
+ Unlike most free software for creating 3D models (such as Blender) it does
+ not focus on the artistic aspects of 3D modelling but instead on the CAD
+ aspects. Thus it might be the application you are looking for when you are
+ planning to create 3D models of machine parts but pretty sure is not what
+ you are looking for when you are more interested in creating computer-animated
+ movies.
+ .
+ OpenSCAD is not an interactive modeller. Instead it is something like
+ a 3D-compiler that reads in a script file that describes the object
+ and renders the 3D model from this script file. This gives you (the designer)
+ full control over
+ .
+ MCAD - additional material&texture library for openscad.
+
+#Package: openscad-doc
+#Architecture: all
+#Description: documentation for openscad
+# <insert long description, indented with spaces>
+
+#--------------------------------------------------------------------------------
+
+#Essential: no
+#Installed-Size: 57008
+#X-Source
+
