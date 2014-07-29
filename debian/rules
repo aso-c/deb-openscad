@@ -25,8 +25,9 @@ f_log = $(deb_)/files.log
 
 override_dh_auto_install:
 
-	@echo 'auto installing...'
-#	mkdir $(deb_)/tmp
+	@echo 'Expand package...'
+	mkdir $(deb_)/tmp
+	tar xzvf ../$(pkg_name).$(pkg_arch).$(pkg_ext) -C $(deb_)/tmp
 
 # отказываемся от использования dh_install, который в данном примере больше будет мешать, чем помогать принцип сборки пакетов: 
 override_dh_install:
