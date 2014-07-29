@@ -13,29 +13,54 @@ export DH_OPTIONS
 %:
 	dh $@ 
 
-deb_root = debian
-pkg_root = $(deb_root)/openscad
-src_root = $(deb_root)/source
-f_log = $(deb_root)/files.log
+pkg_name = openscad-2014.03
+pkg_arch = x86-32
+pkg_ext = tar.gz
+
+deb_ = debian
+pkg_root = $(deb_)/openscad
+src_root = $(deb_)/source
+f_log = $(deb_)/files.log
+
+
+override_dh_auto_install:
+
+	@echo 'auto installing...'
+#	mkdir $(deb_)/tmp
+
 # отказываемся от использования dh_install, который в данном примере больше будет мешать, чем помогать принцип сборки пакетов: 
 override_dh_install:
-
 # копируем наши файлики:
-	echo "Copying application wrappers..."
-	cp -rv $(src_root)/bin/. $(pkg_root)/usr/bin/ > $(f_log)
-	echo "Copying application..."
-	cp -rv $(src_root)/lib/. $(pkg_root)/usr/lib/ >> $(f_log)
-	echo "Copying examples..."
-	cp -rv $(src_root)/examples/. $(pkg_root)/usr/share/openscad/examples/ >> $(f_log)
-#    # "Copying libraries..."
-#	cp -rv $(src_root)/libraries/. $(pkg_root)/usr/share/openscad/libraries/
-	echo "Copying support files..."
-	cp -rv $(src_root)/share/. $(pkg_root)/usr/share/ >> $(f_log)
-    # .desktop     - to /usr/share/application
+	@echo "Copying application wrappers into /usr/bin..."
+	echo 'cp -rv $(src_root)/bin/. $(pkg_root)/usr/bin/ > $(f_log)'
+	@echo "Copying application into /usr/bin..."
+	echo 'cp -rv $(src_root)/lib/. $(pkg_root)/usr/lib/ >> $(f_log)'
+	@echo "Copying examples into /usr/bin..."
+	echo 'cp -rv $(src_root)/examples/. \
+                $(pkg_root)/usr/share/openscad/examples/ >> $(f_log)'
+	@echo "Copying support files into /usr/bin..."
+	@cp -rv $(src_root)/share/. $(pkg_root)/usr/share/ >> $(f_log)
+#	cp -rv $(src_root)/share/appdata/openscad. $(pkg_root)/usr/share/ >> $(f_log)
+#	cp -rv $(src_root)/share/. $(pkg_root)/usr/share/ >> $(f_log)
+#	cp -rv $(src_root)/share/. $(pkg_root)/usr/share/ >> $(f_log)
+#	cp -rv $(src_root)/share/. $(pkg_root)/usr/share/ >> $(f_log)
     # .appdata.xml - to /usr/share/appdata
+    # .desktop     - to /usr/share/application
     # .xml         - to /usr/share/mime/packages
     # .png         - to /usr/share/pixmaks
 
+
+	@echo "Copying libraries..."
+	@cp -rv $(src_root)/libraries/. \
+                $(pkg_root)-mcad/usr/share/openscad/libraries/ >> $(f_log)
+
+#override_dh_prep:
+#
+#	echo "It\'s prepare!!!"
+#	echo '== Current DIR =='
+#	ls
+#	echo '== $(deb_) DIR =='
+#	ls $(deb_)
 
 override_dh_makeshlibs:
 # skipped

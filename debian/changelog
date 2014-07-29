@@ -7,7 +7,7 @@ openscad (2014.03-aso+dfsg-0.3) unstable; urgency=medium
   * Ranges can have a negative step value
   * Added norm() and cross() functions
 
- -- Solomatov A.A. <aso17@ro.ru>  Sun, 27 Jul 2014 13:14:22 +0400
+ -- Solomatov A.A. <xaso17@ro.ru>  Sun, 27 Jul 2014 13:14:22 +0400
 
 openscad (2013.06-0) unstable; urgency=medium
 

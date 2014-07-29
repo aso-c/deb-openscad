@@ -1,4 +1,5 @@
 usr
 usr/share
-usr/share/libraries
-usr/share/libraries/MCAD
+usr/share/openscad
+usr/share/openscad/libraries
+usr/share/openscad/libraries/MCAD
