@@ -21,6 +21,9 @@ set -e
 
 case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+	if [ "$1" = "configure" ] && [ -x "`which update-menus 2>/dev/null`" ] ; then
+	    update-menus
+	fi
     ;;
 
     *)

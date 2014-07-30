@@ -30,6 +30,7 @@ override_dh_auto_install:
 	@echo 'Expand install package...'
 	mkdir $(deb_)/tmp
 	tar xzvf ../$(pkg_name)-$(pkg_ver).$(pkg_arch).$(pkg_ext) -C $(deb_)/tmp
+	chmod ugo-x $(bin_root)/share/appdata/*
 
 # отказываемся от использования dh_install, который в данном примере больше будет мешать, чем помогать принцип сборки пакетов: 
 override_dh_install:
@@ -37,12 +38,12 @@ override_dh_install:
 	@echo ' --=== Installing OpenSCAD files... ===--' > $(f_log)
 
 	@echo "Copying application wrappers into /usr/bin..."
-	echo 'cp -rv $(bin_root)/bin/. $(pkg_root)/usr/bin/ > $(f_log)'
+	cp -rv $(bin_root)/bin/. $(pkg_root)/usr/bin/ > $(f_log)
 	@echo "Copying application into /usr/bin..."
-	echo 'cp -rv $(bin_root)/lib/. $(pkg_root)/usr/lib/ >> $(f_log)'
+	cp -rv $(bin_root)/lib/. $(pkg_root)/usr/lib/ >> $(f_log)
 	@echo "Copying examples into /usr/bin..."
-	echo 'cp -rv $(bin_root)/examples/. \
-                $(pkg_root)/usr/share/openscad/examples/ >> $(f_log)'
+	cp -rv $(bin_root)/examples/. \
+                $(pkg_root)/usr/share/openscad/examples/ >> $(f_log)
 	@echo "Copying support files into /usr/bin..."
     # .appdata.xml - to /usr/share/appdata
     # .desktop     - to /usr/share/applications
