@@ -3,7 +3,7 @@
 
 Source: openscad
 #Provides: OpenSCAD
-Section: universe/graphics;3Dgraphics;engineering
+Section: universe/graphics|3Dgraphics|engineering
 #Section: universe/graphics
 Priority: optional
 Maintainer: Solomatov A.A <aso17@ro.ru>
@@ -56,7 +56,7 @@ Description: The Programmers Solid 3D CAD Modeller
  also possible to read design parameters from DXF files. Besides DXF files
  OpenSCAD can read and create 3D models in the STL and OFF file formats.
 
-Package: openscad-mcad
+Package: oscad-libraries
 Architecture: all
 Description: Additional library for openscad
  OpenSCAD is a software for creating solid 3D CAD models.
