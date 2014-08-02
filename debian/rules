@@ -25,6 +25,7 @@ pkg_ext = tar.gz
 #bin_root = $(deb_)/tmp
 bin_root = debian/tmp
 
+inst = cp $(bin_root)/$(pkg_name)/$(1) debian/$(pkg_name)$(2)
 
 override_dh_auto_install:
 # Expand package tarball into debian/tmp dir.
@@ -33,17 +34,13 @@ override_dh_auto_install:
 	tar xzvf ../$(pkg_name)-$(pkg_ver).$(pkg_arch).$(pkg_ext) -C $(bin_root)
 	mv $(bin_root)/$(pkg_name)-$(pkg_ver) $(bin_root)/$(pkg_name)
 	chmod ugo-x $(bin_root)/$(pkg_name)/share/appdata/*
-#debian/tmp/openscad/share/appdata/openscad.xml
-	cp $(bin_root)/$(pkg_name)/share/appdata/openscad.xml \
-                debian/$(pkg_name).sharedmimeinfo
+	$(call inst,share/appdata/openscad.xml,.sharedmimeinfo)
 
 override_dh_icons:
-	cp $(bin_root)/$(pkg_name)/share/appdata/openscad.png \
-                debian/$(pkg_name)/usr/share/pixmaps
+	$(call inst,share/appdata/openscad.png,/usr/share/pixmaps/)
 
 override_dh_installexamples:
-	cp $(bin_root)/$(pkg_name)/examples/* \
-                debian/$(pkg_name)/usr/share/openscad/examples/
+	$(call inst,examples/*,/usr/share/openscad/examples/)
 
 override_dh_makeshlibs:
 # skipped
