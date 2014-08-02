@@ -8,4 +8,4 @@ usr/share/applications
 usr/share/mime/packages
 usr/share/pixmaps
 usr/share/openscad
-#usr/share/openscad/examples
+usr/share/openscad/examples
