@@ -2,3 +2,5 @@ debian/*.log
 debian/openscad
 debian/openscadlibraries
 debian/tmp
+debian/*.substvars
+debian/files

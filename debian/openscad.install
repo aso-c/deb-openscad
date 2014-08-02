@@ -2,4 +2,4 @@ debian/tmp/openscad/bin/* usr/bin
 debian/tmp/openscad/lib/* usr/lib
 openscad/share/appdata/openscad.appdata.xml usr/share/appdata
 openscad/share/appdata/openscad.desktop usr/share/applications
-openscad/share/appdata/openscad.png usr/share/pixmaps
+#openscad/share/appdata/openscad.png usr/share/pixmaps
