@@ -38,6 +38,7 @@ override_dh_auto_install:
 
 override_dh_icons:
 	$(call inst,share/appdata/openscad.png,/usr/share/pixmaps/)
+	dh_icons
 
 override_dh_installexamples:
 	$(call inst,examples/*,/usr/share/openscad/examples/)
