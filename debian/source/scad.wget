@@ -1,0 +1,27 @@
+
+# wget -l 5 -nc -np -rvF
+#wget -vprNEk -w 1.7 --accept-regex http://en.wikibooks.org/wiki/.* -r -l 4 \
+#wget --config=scad.wget
+#wget \
+verbose = on
+
+add_hostdir = on
+#cut_dirs = 1
+timestamping = no
+adjust_extension = on
+convert_links = on
+# backup_converted = on
+
+recursive = on
+reclevel = 4
+no_parent = on
+page_requisites = on
+robots = off
+
+span_hosts = on
+domains = en.wikibooks.org, upload.wikimedia.org
+tries = 10
+# wait = 0.7
+#  http://en.wikibooks.org/wiki/OpenSCAD_User_Manual \
+logfile = log
+

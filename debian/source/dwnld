@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# wget -l 5 -nc -np -rvF
+#wget -vprNEk -w 1.7 --accept-regex http://en.wikibooks.org/wiki/.* -r -l 4 \
+wget --config=scad.wget http://en.wikibooks.org/wiki/OpenSCAD_User_Manual \
+    --accept-regex '(/OpenSCAD_User_Manual(/.*)?(\.htm(l)?)?)|(\.png)|(\.ico)|(\.jpg)|(\.jpeg)$'
+ 
+#wget \
+#  --verbose \
+#  -NEk \
+#  --recursive \
+#  --tries10 \
+#  -l4 \
+#  --execute robots=off -r \
+#  http://en.wikibooks.org/wiki/OpenSCAD_User_Manual \
+#  -nH
+#  -o log
+##     -nH --cut-dirs=1 -NEk -o log
+##  --wait 0.7 \
+
