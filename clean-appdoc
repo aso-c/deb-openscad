@@ -1,4 +1,5 @@
 #! /bin/sh
 
-rm -rf debian/source/en*
-rm -rf debian/source/up*
+rm -r debian/source/appdoc
+#rm -rf debian/source/en*
+#rm -rf debian/source/up*
