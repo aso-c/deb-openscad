@@ -3,7 +3,7 @@
 # wget -l 5 -nc -np -rvF
 #wget -vprNEk -w 1.7 --accept-regex http://en.wikibooks.org/wiki/.* -r -l 4 \
 wget --config=scad.wget http://en.wikibooks.org/wiki/OpenSCAD_User_Manual \
-    --accept-regex '(/OpenSCAD_User_Manual(/.*)?(\.htm(l)?)?)|(\.png)|(\.ico)|(\.jpg)|(\.jpeg)$'
+    --accept-regex '(/OpenSCAD_User_Manual(/.*)?(\.htm(l)?)?$)|(\.png$)|(\.ico$)|(\.jpg$)|(\.jpeg$)'
  
 #wget \
 #  --verbose \

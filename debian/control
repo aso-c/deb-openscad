@@ -3,7 +3,8 @@
 
 Source: openscad
 #Provides: OpenSCAD
-Section: universe/graphics|3Dgraphics|engineering
+#Section: universe/graphics|3Dgraphics|engineering
+Section: science/engineering|graphics/3D
 #Section: universe/graphics
 Priority: optional
 Maintainer: Solomatov A.A <aso17@ro.ru>

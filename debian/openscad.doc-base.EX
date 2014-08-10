@@ -1,10 +1,10 @@
 Document: openscad
 Title: Debian openscad Manual
-Author: <insert document author here>
+Author: chrysn <chrysn@fsfe.org>
 Abstract: This manual describes what openscad is
  and how it can be used to
  manage online manuals on Debian systems.
-Section: unknown
+Section: science/engineering|graphics/3D
 
 Format: debiandoc-sgml
 Files: /usr/share/doc/openscad/openscad.sgml.gz
