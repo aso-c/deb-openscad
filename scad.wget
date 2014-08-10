@@ -1,3 +1,4 @@
+#! /usr/bin/wget --config
 
 # wget -l 5 -nc -np -rvF
 #wget -vprNEk -w 1.7 --accept-regex http://en.wikibooks.org/wiki/.* -r -l 4 \
@@ -23,5 +24,6 @@ domains = en.wikibooks.org, upload.wikimedia.org
 tries = 10
 # wait = 0.7
 #  http://en.wikibooks.org/wiki/OpenSCAD_User_Manual \
+dir_prefix = debian/source
 logfile = log
 

@@ -1,0 +1,4 @@
+#! /bin/sh
+
+rm -rf debian/source/en*
+rm -rf debian/source/up*
