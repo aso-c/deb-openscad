@@ -28,7 +28,8 @@ Depends: libboost-filesystem1.54.0, libboost-program-options1.54.0,
  libglew1.10 (>= 1.10.0), libglu1-mesa | libglu1, libgmp10, libmpfr4 (>= 3.1.2),
  libopencsg1, libqt4-opengl (>= 4:4.5.3), libqtcore4 (>= 4:4.7.0~beta1),
  libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6)
-Recommends: openscad-mcad
+#Recommends: openscad-mcad
+Recommends: mcad
 Suggests: meshlab, geomview, librecad
 # Enhances: openscad
 #Conflicts
@@ -57,9 +58,15 @@ Description: The Programmers Solid 3D CAD Modeller
  also possible to read design parameters from DXF files. Besides DXF files
  OpenSCAD can read and create 3D models in the STL and OFF file formats.
 
-Package: openscadlibraries
+#Package: openscadlibraries
+Package: mcad
 Architecture: all
-Description: Additional library for openscad
+Depends: openscad
+#Recommends: mcad
+Enhances: openscad
+#Conflicts
+#Replaces
+Description: Mechanical modelling library for openscad
  OpenSCAD is a software for creating solid 3D CAD models.
  It is free software and available for Linux/UNIX, Windows and Mac OS X.
  Unlike most free software for creating 3D models (such as Blender) it does
@@ -74,7 +81,7 @@ Description: Additional library for openscad
  and renders the 3D model from this script file. This gives you (the designer)
  full control over
  .
- MCAD - additional material&texture library for openscad.
+ MCAD - additional mechanical modelling library for openscad.
 
 #Package: openscad-doc
 #Architecture: all

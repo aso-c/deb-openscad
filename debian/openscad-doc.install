@@ -1,1 +1,4 @@
 #DOCS#
+# debian/tmp/openscad/bin/* usr/bin
+debian/source/appdoc/* usr/share/doc-base/openscad
+#ebian/source/appdoc/* usr/share/doc-base/openscad/usermanual

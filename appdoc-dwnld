@@ -1,6 +1,7 @@
 #! /bin/bash
 
 cfgname="/tmp/scad$$.cfg"
+docprefix='debian/source/appdoc'
 
 cat << EOF > $cfgname
 #! /usr/bin/wget --config
@@ -25,7 +26,8 @@ span_hosts = on
 domains = en.wikibooks.org, upload.wikimedia.org
 tries = 10
 # wait = 0.7
-dir_prefix = debian/source/appdoc
+#dir_prefix = debian/source/appdoc
+dir_prefix = $docprefix
 logfile = log
 #===========================================================================
 EOF
@@ -34,7 +36,8 @@ wget --config $cfgname http://en.wikibooks.org/wiki/OpenSCAD_User_Manual \
     --accept-regex '(/OpenSCAD_User_Manual(/.*)?(\.htm(l)?)?$)|(\.png$)|(\.ico$)|(\.jpg$)|(\.jpeg$)' \
 #    --reject-regex '/(File)|(Special):.*'
 
-mv OpenSCAD_User_Manual.html index.html 
+#mv $docprefix/OpenSCAD_User_Manual.html $docprefix/index.html
+
 rm $cfgname
 
 exit 0
