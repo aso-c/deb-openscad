@@ -17,5 +17,8 @@ Origin: http://files.openscad.org/openscad-2014.03.x86-32.tar.gz
 2. Checkout/clone Debian control directory at this calalog.
 3. Correct debian/source symlink for point it to catalog with expanded OpenSCAD installation tarball.
 4. Run debuild --no-lintian -b
-
+    Additional options:
+        -us - not subscribe source
+        -uc - not subscribe changelog
+        -ai386 - force set architecture to i386 (not work) 
 
