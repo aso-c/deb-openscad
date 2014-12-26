@@ -1,7 +1,8 @@
 debian/*.log
 debian/openscad
-debian/openscadlibraries
-debian/openscad-doc
+debian/openscadlibraries/
+debian/openscad-doc/
+debian/openscad-cheat/
 debian/tmp
 debian/*.substvars
 debian/files

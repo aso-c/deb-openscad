@@ -7,8 +7,8 @@ Abstract: A local copy of the OpenSCAD User Manual,
  describes what openscad is and how it can be used
 
 Format: HTML
-Index: /usr/share/doc/openscad-doc/html/index.html
-Files: /usr/share/doc/openscad-doc/html/*.html
+Index: /usr/share/doc/openscad/html/manual/index.html
+Files: /usr/share/doc/openscad/html/manual/*.html
 #------------------------------
 #Document: cream
 #Title: Cream - a modern configuration of the Vim text editor
