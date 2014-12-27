@@ -1,5 +1,4 @@
 Document: openscad-manual
-#Title: Debian openscad Manual
 Title: OpenSCAD - the programmers solid 3d CAD modeller
 Author: chrysn <chrysn@fsfe.org>
 Section: science/engineering|graphics/3D
@@ -9,13 +8,3 @@ Abstract: A local copy of the OpenSCAD User Manual,
 Format: HTML
 Index: /usr/share/doc/openscad/html/manual/index.html
 Files: /usr/share/doc/openscad/html/manual/*.html
-#------------------------------
-#Document: cream
-#Title: Cream - a modern configuration of the Vim text editor
-#Author: Steve Hall
-#Section: Editors
-#Abstract: A local copy of the Cream homepage for offline viewing.
-#
-#Format: HTML
-#Index: /usr/share/doc/cream/html/index.html
-#Files: /usr/share/doc/cream/html/*.html

@@ -29,7 +29,7 @@ Depends: libboost-filesystem1.54.0, libboost-program-options1.54.0,
  libopencsg1, libqt4-opengl (>= 4:4.5.3), libqtcore4 (>= 4:4.7.0~beta1),
  libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6)
 #Recommends: openscad-mcad
-Recommends: mcad
+Recommends: mcad, openscad-doc, openscad-cheat
 Suggests: meshlab, geomview, librecad
 # Enhances: openscad
 #Conflicts
@@ -62,6 +62,7 @@ Package: openscadlibraries
 #Package: openscad-mechlib
 #Package: mcad
 Architecture: all
+Pre-Depends: openscad
 Depends: openscad
 #Recommends: mcad
 Enhances: openscad
@@ -86,6 +87,9 @@ Description: Mechanical modelling library for openscad
 
 Package: openscad-doc
 Architecture: all
+Pre-Depends: openscad
+Depends: openscad
+Enhances: openscad
 Description: User manual for openscad
  Mechanical modelling library for openscad
  OpenSCAD is a software for creating solid 3D CAD models.
@@ -103,6 +107,9 @@ Description: User manual for openscad
  full control over
 
 Package: openscad-cheat
+Pre-Depends: openscad
+Depends: openscad
+Enhances: openscad
 Architecture: all
 Description: cheatsheet for openscad
  Mechanical modelling library for openscad
