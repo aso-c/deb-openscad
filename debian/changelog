@@ -1,3 +1,9 @@
+openscad (2014.03-aso+dfsg-0.70) unstable; urgency=medium
+
+  * Additional documentation package realised.
+
+ -- Solomatov A.A. <aso17@ro.ru>  Sat, 27 Dec 2014 11:49:27 +0400
+
 openscad (2014.03-aso+dfsg-0.64) unstable; urgency=medium
 
   * Launched implementation of the additional documentation package
