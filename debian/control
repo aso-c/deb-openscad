@@ -22,19 +22,15 @@ Bugs: https://github.com/openscad/openscad/issues
 Package: openscad
 Architecture: i386
 #Architecture: amd64
-#Pre-Depends
 Depends: libboost-filesystem1.54.0, libboost-program-options1.54.0,
  libboost-regex1.54.0, libboost-system1.54.0, libboost-thread1.54.0,
  libc6 (>= 2.4), libcgal10, libgcc1 (>= 1:4.1.1), libgl1-mesa-glx | libgl1,
  libglew1.10 (>= 1.10.0), libglu1-mesa | libglu1, libgmp10, libmpfr4 (>= 3.1.2),
  libopencsg1, libqt4-opengl (>= 4:4.5.3), libqtcore4 (>= 4:4.7.0~beta1),
  libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6)
-#Recommends: openscad-mcad
-#Recommends: mcad, openscad-doc, openscad-cheat
 Recommends: openscad-mcadlib, openscad-doc, openscad-cheat
-#Suggests: meshlab, geomview, librecad
+Suggests: meshlab, geomview, librecad
 Suggests: openscad-mcadlib, geomview, librecad
-# Enhances: openscad
 #Conflicts
 #Replaces
 Description: The Programmers Solid 3D CAD Modeller
@@ -61,10 +57,7 @@ Description: The Programmers Solid 3D CAD Modeller
  also possible to read design parameters from DXF files. Besides DXF files
  OpenSCAD can read and create 3D models in the STL and OFF file formats.
 
-#Package: openscadlibraries
-#Package: openscad-mechlib
 Package: openscad-mcadlib
-#Package: mcad
 Architecture: all
 Pre-Depends: openscad
 Depends: openscad
