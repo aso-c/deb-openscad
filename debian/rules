@@ -8,6 +8,52 @@
 export DH_OPTIONS #= -v
 
 
+# Variables set for cross-compiling:
+# build i386 package on amd64 (x86-64) machine
+# simply uncomment all variables & use debuild -b -ai386
+
+### architecture on which debian/rules is run and the package build is performed - amd64.
+## the Debian architecture
+#DEB_BUILD_ARCH=amd64
+## the Debian CPU name
+#DEB_BUILD_ARCH_CPU=amd64
+## the Debian System name
+#DEB_BUILD_ARCH_OS=linux
+#DEB_BUILD_ARCH_BITS=64
+#DEB_BUILD_ARCH_ENDIAN=little
+## the GNU style architecture specification string
+#DEB_BUILD_GNU_TYPE=x86_64-linux-gnu
+## the CPU part of DEB_*_GNU_TYPE
+#DEB_BUILD_GNU_CPU=x86_64
+## the System part of DEB_*_GNU_TYPE
+#DEB_BUILD_GNU_SYSTEM=linux-gnu
+##DEB_BUILD_MULTIARCH=x86_64-linux-gnu
+#
+### Target architecture on which the resulting package# will be installed and run i386.
+## the Debian architecture
+#DEB_HOST_ARCH = i386
+## the Debian CPU name
+#DEB_HOST_ARCH_CPU=i386
+## the Debian System name
+#DEB_HOST_ARCH_OS=linux
+#DEB_HOST_ARCH_BITS=32
+#DEB_HOST_ARCH_ENDIAN=little
+## the CPU part of DEB_*_GNU_TYPE
+#DEB_HOST_GNU_CPU=i686
+## the System part of DEB_*_GNU_TYPE
+#DEB_HOST_GNU_SYSTEM=linux-gnu
+## the GNU style architecture specification string
+#DEB_HOST_GNU_TYPE=i686-linux-gnu
+##DEB_HOST_MULTIARCH=i686-linux-gnu
+#
+#It is important to understand that the DEB_*_ARCH string
+# only determines which Debian architecture we are building on or for.
+# It should not be used to get the CPU or system information;
+# the DEB_*_ARCH_CPU and DEB_*_ARCH_OS variables should be used for that.
+# GNU style variables should generally only be used with upstream build systems.
+
+
+
 # запускаем все остальные deb-helper'ы "по умолчанию"
 # (про которые мы как раз ничего не знаем):
 %:
@@ -33,6 +79,7 @@ override_dh_auto_install:
 	mkdir $(bin_root)
 	tar xzvf ../$(pkg_name)-$(pkg_ver).$(pkg_arch).$(pkg_ext) -C $(bin_root)
 	mv $(bin_root)/$(pkg_name)-$(pkg_ver) $(bin_root)/$(pkg_name)
+	chmod ugo-x $(bin_root)/$(pkg_name)/examples/*
 	chmod ugo-x $(bin_root)/$(pkg_name)/share/appdata/*
 	chmod ugo-x $(bin_root)/$(pkg_name)/libraries/MCAD/*.scad
 	chmod ugo-x $(bin_root)/$(pkg_name)/libraries/MCAD/*.txt
@@ -54,3 +101,5 @@ override_dh_makeshlibs:
 override_dh_shlibdeps:
 # skipped
 
+override_dh_strip:
+# skipped

@@ -14,11 +14,14 @@ Origin: http://files.openscad.org/openscad-2014.03.x86-32.tar.gz
 
 1. Create package directory with name by scheme:
     [package_name]-[version]-[debian-revision]
-2. Checkout/clone Debian control directory at this calalog.
-3. Correct debian/source symlink for point it to catalog with expanded OpenSCAD installation tarball.
-4. Run debuild --no-lintian -b
+2. Checkout/clone Debian control directory in this calalog.
+3. In parent catalog create symlink into original openscads tarball
+    by the scheme: openscad-<version>-<debian_revision>.
+4. Fix the content debian/rules, debian/control & debian/changelog files with actual information
+    about version, architecture & current maintainer of debianising openscad tarball.
+5. Run debuild --no-lintian -b
     Additional options:
         -us - not subscribe source
         -uc - not subscribe changelog
-        -ai386 - force set architecture to i386 (not work) 
+        -ai386 - force set architecture to i386 (for amd64 cross-compile) 
 

@@ -1,7 +1,8 @@
 Document: openscad-manual
 Title: OpenSCAD - the programmers solid 3d CAD modeller
 Author: chrysn <chrysn@fsfe.org>
-Section: science/engineering|graphics/3D
+Section: universe/graphics
+#Section: science/engineering|graphics/3D
 Abstract: A local copy of the OpenSCAD User Manual,
  describes what openscad is and how it can be used
 

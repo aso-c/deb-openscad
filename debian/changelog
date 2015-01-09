@@ -1,3 +1,9 @@
+openscad (2014.03-aso+dfsg-1.02) unstable; urgency=medium
+
+  * Prepared to cross-compiling (building) on x86_64 for i386
+
+ -- Solomatov A.A. <aso17@ro.ru>  Fri, 09 Jan 2015 20:15:49 +0400
+
 openscad (2014.03-aso+dfsg-1.01) unstable; urgency=medium
 
   * First package build set release.
@@ -6,7 +12,7 @@ openscad (2014.03-aso+dfsg-1.01) unstable; urgency=medium
 
 openscad (2014.03-aso+dfsg-0.73) unstable; urgency=medium
 
-  * Additional documentation package realised.
+  * Additional documentation package released.
 
  -- Solomatov A.A. <aso17@ro.ru>  Sat, 27 Dec 2014 11:49:27 +0400
 

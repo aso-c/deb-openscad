@@ -1,7 +1,8 @@
 Document: openscad-cheat
 Title: Cheat-sheet for the OpenSCAD - the programmers solid 3d CAD modeller
 Author: chrysn <chrysn@fsfe.org>
-Section: science/engineering|graphics/3D
+#Section: science/engineering|graphics/3D
+Section: universe/graphics
 Abstract: A local cheatsheet list for the OpenSCAD
 
 Format: HTML
