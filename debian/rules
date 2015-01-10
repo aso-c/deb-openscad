@@ -13,23 +13,6 @@ export DH_OPTIONS #= -v
 # simply uncomment all variables & use debuild -b -ai386
 
 ### architecture on which debian/rules is run and the package build is performed - amd64.
-## the Debian architecture
-#DEB_BUILD_ARCH=amd64
-## the Debian CPU name
-#DEB_BUILD_ARCH_CPU=amd64
-## the Debian System name
-#DEB_BUILD_ARCH_OS=linux
-#DEB_BUILD_ARCH_BITS=64
-#DEB_BUILD_ARCH_ENDIAN=little
-## the GNU style architecture specification string
-#DEB_BUILD_GNU_TYPE=x86_64-linux-gnu
-## the CPU part of DEB_*_GNU_TYPE
-#DEB_BUILD_GNU_CPU=x86_64
-## the System part of DEB_*_GNU_TYPE
-#DEB_BUILD_GNU_SYSTEM=linux-gnu
-##DEB_BUILD_MULTIARCH=x86_64-linux-gnu
-#
-### architecture on which debian/rules is run and the package build is performed - amd64.
 ifeq (DEB_BUILD_ARCH,amd64)
 ### Target architecture on which the resulting package# will be installed and run i386.
     DEB_HOST_ARCH = i386    # the Debian architecture
@@ -48,7 +31,6 @@ endif
 # It should not be used to get the CPU or system information;
 # the DEB_*_ARCH_CPU and DEB_*_ARCH_OS variables should be used for that.
 # GNU style variables should generally only be used with upstream build systems.
-
 
 
 # запускаем все остальные deb-helper'ы "по умолчанию"

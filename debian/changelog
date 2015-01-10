@@ -1,6 +1,14 @@
-openscad (2014.03-aso+dfsg-1.03) unstable; urgency=medium
+openscad (2014.03-aso+dfsg-1.1) unstable; urgency=medium
 
   * Released conditional switching for cross-compiling
+    (package building only) on amd64 system for i386 architecture
+  * Clean that code.
+
+ -- Solomatov A.A. <aso17@ro.ru>  Sat, 10 Jan 2015 17:27:14 +0400
+
+openscad (2014.03-aso+dfsg-1.03) unstable; urgency=medium
+
+  * Implemented conditional switching for cross-compiling
     (package building only) on amd64 system for i386 architecture
 
  -- Solomatov A.A. <aso17@ro.ru>  Sat, 10 Jan 2015 17:07:01 +0400
