@@ -29,23 +29,20 @@ export DH_OPTIONS #= -v
 #DEB_BUILD_GNU_SYSTEM=linux-gnu
 ##DEB_BUILD_MULTIARCH=x86_64-linux-gnu
 #
+### architecture on which debian/rules is run and the package build is performed - amd64.
+ifeq (DEB_BUILD_ARCH,amd64)
 ### Target architecture on which the resulting package# will be installed and run i386.
-## the Debian architecture
-#DEB_HOST_ARCH = i386
-## the Debian CPU name
-#DEB_HOST_ARCH_CPU=i386
-## the Debian System name
-#DEB_HOST_ARCH_OS=linux
-#DEB_HOST_ARCH_BITS=32
-#DEB_HOST_ARCH_ENDIAN=little
-## the CPU part of DEB_*_GNU_TYPE
-#DEB_HOST_GNU_CPU=i686
-## the System part of DEB_*_GNU_TYPE
-#DEB_HOST_GNU_SYSTEM=linux-gnu
-## the GNU style architecture specification string
-#DEB_HOST_GNU_TYPE=i686-linux-gnu
-##DEB_HOST_MULTIARCH=i686-linux-gnu
-#
+    DEB_HOST_ARCH = i386    # the Debian architecture
+    DEB_HOST_ARCH_CPU=i386  # the Debian CPU name
+    DEB_HOST_ARCH_OS=linux  # the Debian System name
+    DEB_HOST_ARCH_BITS=32
+    DEB_HOST_ARCH_ENDIAN=little
+    DEB_HOST_GNU_CPU=i686   # the CPU part of DEB_*_GNU_TYPE
+    DEB_HOST_GNU_SYSTEM=linux-gnu   # the System part of DEB_*_GNU_TYPE
+    DEB_HOST_GNU_TYPE=i686-linux-gnu    # the GNU style architecture specification string
+    #DEB_HOST_MULTIARCH=i686-linux-gnu
+endif
+
 #It is important to understand that the DEB_*_ARCH string
 # only determines which Debian architecture we are building on or for.
 # It should not be used to get the CPU or system information;
