@@ -9,3 +9,4 @@ debian/*.substvars
 debian/files
 debian/source/appdoc/
 debian/source/cheatsheet/
+*.swp
