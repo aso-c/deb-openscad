@@ -32,15 +32,28 @@ endif
 # the DEB_*_ARCH_CPU and DEB_*_ARCH_OS variables should be used for that.
 # GNU style variables should generally only be used with upstream build systems.
 
+# Makefile snippet defining the following variables:
+#
+# DEB_SOURCE: the source package name
+# DEB_VERSION: the full version of the package (epoch + upstream vers. + revision)
+# DEB_VERSION_EPOCH_UPSTREAM: the package's version without the Debian revision
+# DEB_VERSION_UPSTREAM_REVISION: the package's version without the Debian epoch
+# DEB_VERSION_UPSTREAM: the package's upstream version
+# DEB_DISTRIBUTION: the distribution(s) listed in the current entry of debian/changelog
+include /usr/share/dpkg/pkg-info.mk
+
 
 # запускаем все остальные deb-helper'ы "по умолчанию"
 # (про которые мы как раз ничего не знаем):
 %:
 	dh $@ 
 
-pkg_name = openscad
-pkg_ver = 2014.03
-pkg_arch = x86-32
+#pkg_name = openscad
+pkg_name = $(DEB_SOURCE)
+#kg_ver = 2014.03
+pkg_ver = $(DEB_VERSION_UPSTREAM:-aso+dfsg=)
+#pkg_arch = x86-32
+pkg_arch = x86-$(DEB_HOST_ARCH_BITS)
 pkg_ext = tar.gz
 
 #deb_ = debian
@@ -55,6 +68,18 @@ inst = cp $(bin_root)/$(pkg_name)/$(1) debian/$(pkg_name)$(2)
 override_dh_auto_install:
 # Expand package tarball into debian/tmp dir.
 	@echo 'Expand install package...'
+# DEB_SOURCE: the source package name
+	@echo DEB_SOURCE: $(DEB_SOURCE)
+# DEB_VERSION: the full version of the package (epoch + upstream vers. + revision)
+	@echo DEB_VERSION: $(DEB_VERSION)
+# DEB_VERSION_EPOCH_UPSTREAM: the package's version without the Debian revision
+	@echo DEB_VERSION_EPOCH_UPSTREAM: $(DEB_VERSION_EPOCH_UPSTREAM)
+# DEB_VERSION_UPSTREAM_REVISION: the package's version without the Debian epoch
+	@echo DEB_VERSION_UPSTREAM_REVISION: $(DEB_VERSION_UPSTREAM_REVISION)
+# DEB_VERSION_UPSTREAM: the package's upstream version
+	@echo DEB_VERSION_UPSTREAM: $(DEB_VERSION_UPSTREAM)
+	@echo pkg_ver: $(pkg_ver)
+	false
 	mkdir $(bin_root)
 	tar xzvf ../$(pkg_name)-$(pkg_ver).$(pkg_arch).$(pkg_ext) -C $(bin_root)
 	mv $(bin_root)/$(pkg_name)-$(pkg_ver) $(bin_root)/$(pkg_name)

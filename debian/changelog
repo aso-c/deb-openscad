@@ -1,3 +1,9 @@
+openscad (2014.03-aso+dfsg-1.2) UNRELEASED; urgency=low
+
+  * Using make snippets for package name, version, etc.
+
+ -- Solomatov A.A. <aso17@ro.ru>  Sun, 24 May 2015 08:43:29 +0400
+
 openscad (2014.03-aso+dfsg-1.1) unstable; urgency=medium
 
   * Released conditional switching for cross-compiling
