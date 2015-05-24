@@ -48,24 +48,13 @@ include /usr/share/dpkg/pkg-info.mk
 %:
 	dh $@ 
 
-#pkg_name = openscad
-#pkg_name = $(DEB_SOURCE)
-#kg_ver = 2014.03
 pkg_ver = $(DEB_VERSION_UPSTREAM:-aso+dfsg=)
-#pkg_arch = x86-32
-#pkg_arch = x86-$(DEB_HOST_ARCH_BITS)
 pkg_arch = $(pkg_cpu_name)-$(DEB_HOST_ARCH_BITS)
-pkg_cpu_name = x86
+pkg_cpugen = x86
 pkg_ext = tar.gz
 
-#deb_ = debian
-#pkg_root = $(deb_)/openscad
-#src_org = $(deb_)/source
-#bin_org = $(deb_)/tmp/$(pkg_name)
-#bin_root = $(deb_)/tmp
 bin_root = debian/tmp
 
-#inst = cp $(bin_root)/$(pkg_name)/$(1) debian/$(pkg_name)$(2)
 inst = cp $(bin_root)/$(DEB_SOURCE)/$(1) debian/$(DEB_SOURCE)$(2)
 
 override_dh_auto_install:
@@ -84,16 +73,9 @@ override_dh_auto_install:
 	@echo pkg_ver: $(pkg_ver)
 	#false
 	mkdir $(bin_root)
-#	tar xzvf ../$(pkg_name)-$(pkg_ver).$(pkg_arch).$(pkg_ext) -C $(bin_root)
-#	mv $(bin_root)/$(pkg_name)-$(pkg_ver) $(bin_root)/$(pkg_name)
-#	chmod ugo-x $(bin_root)/$(pkg_name)/examples/*
-#	chmod ugo-x $(bin_root)/$(pkg_name)/share/appdata/*
-#	chmod ugo-x $(bin_root)/$(pkg_name)/libraries/MCAD/*.scad
-#	chmod ugo-x $(bin_root)/$(pkg_name)/libraries/MCAD/*.txt
-#	chmod ugo-x $(bin_root)/$(pkg_name)/libraries/MCAD/*.markdown
-#	chmod ugo-x $(bin_root)/$(pkg_name)/libraries/MCAD/TODO
-#	chmod ugo-x $(bin_root)/$(pkg_name)/libraries/MCAD/bitmap/*
-	tar xzvf ../$(DEB_SOURCE)-$(pkg_ver).$(pkg_arch).$(pkg_ext) -C $(bin_root)
+#	tar xzvf ../$(DEB_SOURCE)-$(pkg_ver).$(pkg_arch).$(pkg_ext) -C $(bin_root)
+	tar xzvf ../$(DEB_SOURCE)-$(pkg_ver).$(pkg_cpugen)-$(DEB_HOST_ARCH_BITS).$(pkg_ext) \
+	       	-C $(bin_root)
 	mv $(bin_root)/$(DEB_SOURCE)-$(pkg_ver) $(bin_root)/$(DEB_SOURCE)
 	chmod ugo-x $(bin_root)/$(DEB_SOURCE)/examples/*
 	chmod ugo-x $(bin_root)/$(DEB_SOURCE)/share/appdata/*
