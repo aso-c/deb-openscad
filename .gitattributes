@@ -1,0 +1,6 @@
+# Declare the "tuplecall" file as C++ Header File
+_docs/* linguist-documentation
+debian/* linguist-language=debhelper-command-sequencer-file linguist-detectable
+debian/*.ex -linguist-language=debhelper-command-sequencer-file
+debian/*.ex linguist-language=example-file linguist-detectable
+debian/rules -linguist-language=debhelper-command-sequencer-file linguist-detectable
